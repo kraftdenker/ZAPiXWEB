@@ -40,11 +40,13 @@ v1.3	- [10-08-21]: Correct chat extraction
 v1.4	- [12-03-21]: Change extraction to full support multiple devices
 v1.5	- [02-21-22]: Hash, new decryption code (using vendor module ligsignal)
 
-Using this foss modules:
+Using this foss modules into export script:
 	AXIOS - https://github.com/axios/axios/
 	JSZIP - https://raw.github.com/Stuk/jszip/
 	FILESSAVER - https://github.com/eligrey/FileSaver.js/
 	WA-AUTOMATE-NODEJS - https://github.com/open-wa/wa-automate-nodejs/blob/master/src/lib/wapi.js
+Using this foos module into import script:
+	SIMPLEJSON - https://github.com/simplejson/simplejson
 
 USAGE: 
 Copy and paste all SPIZAPiXWEB.js code into browser console + ENTER. 
@@ -54,6 +56,7 @@ In Firefox console, you have to manually type "allow paste" into the console to 
 
 IMPORTING to UFED:
 Install plugin ZAPiXWEB_UFED_PLUGIN.tplug to UFED and execute choosing project with ZIP contaning exported data.
+In instalation process, "simplejson" directory must be in the same directory of the plugin's file.
 
 See ZAPiXWEB_MANUAL.PDF for detailed instructions.
 
