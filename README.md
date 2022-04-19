@@ -17,7 +17,7 @@ Soares, A. (2022). WhatsApp Web Client Live Forensics Technique. In Proceedings 
 https://doi.org/10.5220/0011006400003120
 
 ZAPiXWEB WhatsApp Extractor - 4 CHROME (TESTED), FIREFOX (TESTED), EDGE (TESTED), OPERA 
-(It works also offline)
+(It also works offline)
 
 Script for WhatsApp Web Client Live Forensics
 Script Name: SPIZAPIXWEB.js
