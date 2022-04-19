@@ -1,0 +1,1 @@
+pbcopy < SPIZAPiXWEB.js
