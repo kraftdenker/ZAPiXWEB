@@ -31,6 +31,7 @@ browsers. The technique extracts, in line with forensics procedures, digital dat
 tools for analysis. 
 
 Copyright: 2021 Alberto Magno <alberto.magno@gmail.com> 
+
 URL: https://github.com/kraftdenker/ZAPiXWEB
 
 --
@@ -41,11 +42,11 @@ v1.3	- [10-08-21]: Correct chat extraction
 v1.4	- [12-03-21]: Change extraction to full support multiple devices
 v1.5	- [02-21-22]: Hash, new decryption code (using vendor module ligsignal)
 
-Using this modules:
-AXIOS - https://github.com/axios/axios/
-JSZIP - https://raw.github.com/Stuk/jszip/
-FILESSAVER - https://github.com/eligrey/FileSaver.js/
-WA-AUTOMATE-NODEJS - https://github.com/open-wa/wa-automate-nodejs/blob/master/src/lib/wapi.js
+Using this foss modules:
+	AXIOS - https://github.com/axios/axios/
+	JSZIP - https://raw.github.com/Stuk/jszip/
+	FILESSAVER - https://github.com/eligrey/FileSaver.js/
+	WA-AUTOMATE-NODEJS - https://github.com/open-wa/wa-automate-nodejs/blob/master/src/lib/wapi.js
 
 USAGE: 
 Copy and paste all SPIZAPiXWEB.js code into browser console + ENTER. 
