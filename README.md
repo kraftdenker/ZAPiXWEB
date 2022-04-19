@@ -54,7 +54,7 @@ Copy and paste all SPIZAPiXWEB.js code into browser console + ENTER.
 Choose opetions at webinterface on left corner of the screen.
 In Firefox console, you have to manually type "allow paste" into the console to enable pasting.
 
-IMPORTING to UFED 
+IMPORTING to UFED:
 Install plugin ZAPiXWEB_UFED_PLUGIN.tplug to UFED and execute choosing project with ZIP contaning exported data.
 
 See ZAPiXWEB_MANUNAL.PDF for detailed instructions.
