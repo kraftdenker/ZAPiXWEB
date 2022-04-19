@@ -30,8 +30,6 @@ contacts, and account data, even if in a disconnected computer, from WhatsApp We
 browsers. The technique extracts, in line with forensics procedures, digital data that can be loaded in forensic
 tools for analysis. 
 
-Copyright: 2021 Alberto Magno <alberto.magno@gmail.com> 
-
 URL: https://github.com/kraftdenker/ZAPiXWEB
 
 --
