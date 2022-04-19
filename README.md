@@ -57,5 +57,5 @@ In Firefox console, you have to manually type "allow paste" into the console to 
 IMPORTING to UFED:
 Install plugin ZAPiXWEB_UFED_PLUGIN.tplug to UFED and execute choosing project with ZIP contaning exported data.
 
-See ZAPiXWEB_MANUNAL.PDF for detailed instructions.
+See ZAPiXWEB_MANUAL.PDF for detailed instructions.
 
