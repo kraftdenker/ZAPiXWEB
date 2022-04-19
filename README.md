@@ -56,7 +56,7 @@ In Firefox console, you have to manually type "allow paste" into the console to 
 
 IMPORTING to UFED:
 Install plugin ZAPiXWEB_UFED_PLUGIN.tplug to UFED and execute choosing project with ZIP contaning exported data.
-In instalation process, "simplejson" directory must be in the same directory of the plugin's file.
+In installation process, "simplejson" directory must be in the same directory of the plugin's file.
 
 See ZAPiXWEB_MANUAL.PDF for detailed instructions.
 
