@@ -57,6 +57,8 @@ Using this foos module into import script:
 	SIMPLEJSON - https://github.com/simplejson/simplejson
 
 USAGE: 
+First of all, if online, you must scroll through the conversations of greatest interest "going
+up" with the scroll bar until the date of interest. It will download locally the message attachments.
 Copy and paste all SPIZAPiXWEB.js code into browser console + ENTER. 
 (For Copy you can execute shell scripts for each specific O.S. that copy code to transfer-area: ZAPiXWEB_WIN.bat,ZAPiXWEB_iOS.sh, ZAPiXWEB_LINUX.sh)
 Choose opetions at webinterface on left corner of the screen.
