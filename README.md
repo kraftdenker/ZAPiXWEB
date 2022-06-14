@@ -12,6 +12,8 @@ Author: alberto.magno@gmail.com (https://github.com/kraftdenker)
 
 LICENSE GNU General Public License v3.0 
 
+Illegal use of this product will be subject to legal proceedings.
+
 Implementation of technique described in paper:
 Soares, A. (2022). WhatsApp Web Client Live Forensics Technique. In Proceedings of the 8th International Conference on Information Systems Security and Privacy - ICISSP, ISBN 978-989-758-553-1, pages 629-636. DOI: 10.5220/0011006400003120
 https://doi.org/10.5220/0011006400003120
@@ -36,9 +38,13 @@ URL: https://github.com/kraftdenker/ZAPiXWEB
 --
 - ChangeLog -
 v1 	- [05-18-21]: Wrote original code
+
 v1.2	- [09-27-21]: Command to extract one or more chats.
+
 v1.3	- [10-08-21]: Correct chat extraction
+
 v1.4	- [12-03-21]: Change extraction to full support multiple devices
+
 v1.5	- [02-21-22]: Hash, new decryption code (using vendor module libsignal)
 
 Using this foss modules into export script:
