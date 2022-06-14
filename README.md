@@ -37,7 +37,7 @@ URL: https://github.com/kraftdenker/ZAPiXWEB
 
 -------------
 - ChangeLog -
--------------
+
 v1 	- [05-18-21]: Wrote original code
 
 v1.2	- [09-27-21]: Command to extract one or more chats.
@@ -47,7 +47,7 @@ v1.3	- [10-08-21]: Correct chat extraction
 v1.4	- [12-03-21]: Change extraction to full support multiple devices
 
 v1.5	- [02-21-22]: Hash, new decryption code (using vendor module libsignal)
-
+-------------
 Using this foss modules into export script:
 	AXIOS - https://github.com/axios/axios/
 	JSZIP - https://raw.github.com/Stuk/jszip/
@@ -61,7 +61,8 @@ First of all, if online, you must scroll through the conversations of greatest i
 up" with the scroll bar until the date of interest. It will download locally the message attachments.
 Copy and paste all SPIZAPiXWEB.js code into browser console + ENTER. 
 (For Copy you can execute shell scripts for each specific O.S. that copy code to transfer-area: ZAPiXWEB_WIN.bat,ZAPiXWEB_iOS.sh, ZAPiXWEB_LINUX.sh)
-Choose opetions at webinterface on left corner of the screen.
+
+Choose options at webinterface on left corner of the screen.
 
 In Firefox console, you have to manually type "allow paste" into the console to enable pasting.
 
