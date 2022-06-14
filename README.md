@@ -17,6 +17,7 @@ Soares, A. (2022). WhatsApp Web Client Live Forensics Technique. In Proceedings 
 https://doi.org/10.5220/0011006400003120
 
 ZAPiXWEB WhatsApp Extractor - 4 CHROME (TESTED), FIREFOX (TESTED), EDGE (TESTED), OPERA 
+
 (It also works offline)
 
 Script for WhatsApp Web Client Live Forensics
@@ -34,11 +35,11 @@ URL: https://github.com/kraftdenker/ZAPiXWEB
 
 --
 - ChangeLog -
-v1 		- [05-18-21]: Wrote original code
+v1 	- [05-18-21]: Wrote original code
 v1.2	- [09-27-21]: Command to extract one or more chats.
 v1.3	- [10-08-21]: Correct chat extraction
 v1.4	- [12-03-21]: Change extraction to full support multiple devices
-v1.5	- [02-21-22]: Hash, new decryption code (using vendor module ligsignal)
+v1.5	- [02-21-22]: Hash, new decryption code (using vendor module libsignal)
 
 Using this foss modules into export script:
 	AXIOS - https://github.com/axios/axios/
@@ -52,6 +53,7 @@ USAGE:
 Copy and paste all SPIZAPiXWEB.js code into browser console + ENTER. 
 (For Copy you can execute shell scripts for each specific O.S. that copy code to transfer-area: ZAPiXWEB_WIN.bat,ZAPiXWEB_iOS.sh, ZAPiXWEB_LINUX.sh)
 Choose opetions at webinterface on left corner of the screen.
+
 In Firefox console, you have to manually type "allow paste" into the console to enable pasting.
 
 IMPORTING to UFED:
