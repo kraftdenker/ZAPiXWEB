@@ -47,6 +47,7 @@ v1.3	- [10-08-21]: Correct chat extraction
 v1.4	- [12-03-21]: Change extraction to full support multiple devices
 
 v1.5	- [02-21-22]: Hash, new decryption code (using vendor module libsignal)
+
 -------------
 Using this foss modules into export script:
 	AXIOS - https://github.com/axios/axios/
