@@ -4330,7 +4330,7 @@ window.ZAPiX._getMe2 = function (){
 	{
 		for (var contactIndex = 0; contactIndex<Store.Contact._models.length; contactIndex++)
 		{
-			if (Store.Contact.models[contactIndex].__x_isMe)
+			if (Store.Contact._models[contactIndex].__x_isMe)
 			{
 				return Store.Contact._models[contactIndex]
 			}
