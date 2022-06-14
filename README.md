@@ -35,8 +35,9 @@ tools for analysis.
 
 URL: https://github.com/kraftdenker/ZAPiXWEB
 
---
+-------------
 - ChangeLog -
+-------------
 v1 	- [05-18-21]: Wrote original code
 
 v1.2	- [09-27-21]: Command to extract one or more chats.
