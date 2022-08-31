@@ -4645,7 +4645,7 @@ window.ZAPiX.getchat = function (btn){
 		return;
 	}
 	btn.style.background = 'darkgreen';
-	window.ZAPiX._internal_getchat(document.getElementById("main").getElementsByTagName('span')[1].title)
+	window.ZAPiX._internal_getchat(document.getElementById("main").getElementsByTagName('span')[0].title)
 	btn.style.background = 'forestgreen';
 
 	console.log(window.ZAPiX._zapix_header);
