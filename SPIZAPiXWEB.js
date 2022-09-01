@@ -13,8 +13,8 @@ ZAPiXWEB WhatsApp Extractor - 4 CHROME (TESTED), FIREFOX (TESTED), EDGE (TESTED)
 (It works also offline)
 
 Script Name: SPIZAPIXWEB.js
-Version: 1.5
-Revised Date: 02/21/22
+Version: 1.5.1
+Revised Date: 08/31/22
 
 Description: A script that extracts throught Whatsapp WEB data records.
 Technique described in paper:
@@ -33,6 +33,7 @@ v1.2	- [09-27-21]: Command to extract one or more chats.
 v1.3	- [10-08-21]: Correct chat extraction
 v1.4	- [12-03-21]: Change extraction to full support multiple devices
 v1.5	- [02-21-22]: Hash, new decryption code (using vendor module ligsignal)
+v1.5.1	- [08-31-22]: Adjust in which DOM element to grab the current chat name
 
 Author: alberto.magno@gmail.com (https://github.com/kraftdenker)  _
 
