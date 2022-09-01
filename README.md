@@ -24,8 +24,6 @@ ZAPiXWEB WhatsApp Extractor - 4 CHROME (TESTED), FIREFOX (TESTED), EDGE (TESTED)
 
 Script for WhatsApp Web Client Live Forensics
 Script Name: SPIZAPIXWEB.js
-Version: 1.5
-Revised Date: 02/21/22
 
 Description: A script that extracts throught Whatsapp WEB data records.
 This live acquisition technique allows automated extraction of messages, attachments,
@@ -36,25 +34,14 @@ tools for analysis.
 URL: https://github.com/kraftdenker/ZAPiXWEB
 
 -------------
-- ChangeLog -
-
-v1 	- [05-18-21]: Wrote original code
-
-v1.2	- [09-27-21]: Command to extract one or more chats.
-
-v1.3	- [10-08-21]: Correct chat extraction
-
-v1.4	- [12-03-21]: Change extraction to full support multiple devices
-
-v1.5	- [02-21-22]: Hash, new decryption code (using vendor module libsignal)
-
+- ChangeLog decribed into .js source file.
 -------------
 Using this foss modules into export script:
 	AXIOS - https://github.com/axios/axios/
 	JSZIP - https://raw.github.com/Stuk/jszip/
 	FILESSAVER - https://github.com/eligrey/FileSaver.js/
 	WA-AUTOMATE-NODEJS - https://github.com/open-wa/wa-automate-nodejs/blob/master/src/lib/wapi.js
-Using this foos module into import script:
+Using the following module for import into UFED:
 	SIMPLEJSON - https://github.com/simplejson/simplejson
 
 USAGE: 
