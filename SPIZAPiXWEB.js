@@ -9,11 +9,11 @@
 				                      ZAPiX Web
 W H A T S A P P W E B   E X T R A C T O R						
 
-ZAPiXWEB WhatsApp Extractor - 4 CHROME (TESTED), FIREFOX (TESTED), EDGE (TESTED), OPERA 
-(It works also offline)
+ZAPiXWEB WhatsApp Extractor - 4 CHROME, FIREFOX, EDGE, OPERA, WhatsApp Desktop App (ELECTRON) 
+(It also works offline for Browser extractions. It just works online for DesktopApp)
 
 Script Name: SPIZAPIXWEB.js
-Version: 1.5.1
+Version: 1.6
 Revised Date: 08/31/22
 
 Description: A script that extracts throught Whatsapp WEB data records.
@@ -26,7 +26,19 @@ URL: https://github.com/kraftdenker/cellebrite-UFEDPA-scripts
 Manual: Copy and paste all this code into browser console + ENTER. 
 Follow the commands in console window.
 In Firefox, you have to manually type "allow paste" into the console to enable pasting.
---
+
+WhatsApp Desktop  - Electron (For this whatsapp version, it only works online): 
+-----------------------------------------------------------------
+-start or locate running app dir with taskmanager->details->whatsapp->(rightclick)->File location (similar to C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2228.14.0_x64__cv1g1gvanyjgm\app)
+-CLOSE APPLICATION. start application with this command line in the app directory: 
+C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2228.14.0_x64__cv1g1gvanyjgm\app>WhatsApp.exe --remote-debugging-port=9222 --disable-web-security --expose-internals-for-testing --allow-sandbox-debugging --debug-devtools --disable-file-system --enable-logging  --unlimited-quota-for-files --enable-experimental-web-platform-features --allow-file-access-from-files
+-Open a browser (Chrome, Edge, etc...) into debug inspector
+ ex: Chrome, type into address bar: chrome://inspect
+     Edge, type into address bar: edge://inspect
+- Wait for remote sites location, click inspect in WhatsApp Desktop program.
+- Copy/Paste ZAPiXWEB script
+- Attention: User needs to explict type the file names to the zip file and to the hash file when asked. After extration, no hashfile is automatically generate. So, the user needs to click 'Last digest' to generate hash file.
+
 - ChangeLog -
 v1 		- [05-18-21]: Wrote original code
 v1.2	- [09-27-21]: Command to extract one or more chats.
@@ -34,6 +46,7 @@ v1.3	- [10-08-21]: Correct chat extraction
 v1.4	- [12-03-21]: Change extraction to full support multiple devices
 v1.5	- [02-21-22]: Hash, new decryption code (using vendor module ligsignal)
 v1.5.1	- [08-31-22]: Adjust in which DOM element to grab the current chat name
+v1.6	- [08-31-22]: Adaptation for use with Electron (Whatsapp Desktop App)
 
 Author: alberto.magno@gmail.com (https://github.com/kraftdenker)  _
 
@@ -43,6 +56,8 @@ JSZIP - https://raw.github.com/Stuk/jszip/
 FILESSAVER - https://github.com/eligrey/FileSaver.js/
 WA-AUTOMATE-NODEJS - https://github.com/open-wa/wa-automate-nodejs/blob/master/src/lib/wapi.js
 */
+
+
 
 
 
@@ -4299,6 +4314,26 @@ function base64ToArrayBuffer(base64) {
     return bytes.buffer;
 }
 
+function isElectron() {
+    // Renderer process
+    if (typeof window !== 'undefined' && typeof window.process === 'object' && window.process.type === 'renderer') {
+        return true;
+    }
+
+    // Main process
+    if (typeof process !== 'undefined' && typeof process.versions === 'object' && !!process.versions.electron) {
+        return true;
+    }
+
+    // Detect the user agent when the `nodeIntegration` option is set to true
+    if (typeof navigator === 'object' && typeof navigator.userAgent === 'string' && navigator.userAgent.indexOf('Electron') >= 0) {
+        return true;
+    }
+
+    return false;
+}
+
+
 var b64toBlob = (b64Data, contentType='', sliceSize=512) => {
   const byteCharacters = atob(b64Data);
   const byteArrays = [];
@@ -4524,13 +4559,32 @@ window.ZAPiX._internal_getchat = async function (chatName){
 		}
 	window.ZAPiX._statusTextnode.data = chatName+" extracted!";
 }
+async function saveAsElectron(dataFile, fileName) {
+	if (!(dataFile instanceof Blob)){
+		dataFile = new Blob([dataFile], {type:'text/plain'});
+	}
+	const opts = {
+	suggestedName: fileName
+	};
+	const newHandle = await window.showSaveFilePicker(opts);
+	const options = {};
+	options.mode = 'readwrite';
+	await newHandle.requestPermission(options);
+	const writableStream = await newHandle.createWritable();
+	await writableStream.write(dataFile);
+	await writableStream.close();
+}
+
 
 window.ZAPiX.showDigest = function(){
 	var hashHex = window.ZAPiX._lastDigest;
 	if (hashHex!=undefined){
-		if (prompt('DIGEST SHA-512, want to save to file?',hashHex)){
-			var userAccount = window.ZAPiX._getMe2();
-			var hashFile = new File([(hashHex +" ?SHA512*"+ "ZAPiXWEB_"+userAccount.__x_id._serialized+".sha512.txt")],userAccount.__x_id._serialized+".sha512.txt", {type: "text/plain;charset=utf-8"});
+		var userAccount = window.ZAPiX._getMe2();
+		var content = hashHex +" ?SHA512*"+ "ZAPiXWEB_"+userAccount.__x_id._serialized+".sha512.txt";
+		var hashFile = new File([(content)],userAccount.__x_id._serialized+".sha512.txt", {type: "text/plain;charset=utf-8"});
+		if (isElectron()){
+			saveAsElectron(content, "hash");
+		} else {
 			saveAs(hashFile);
 		}
 	}
@@ -4542,7 +4596,12 @@ window.ZAPiX._internal_end = async function (){
 	await window.ZAPiX._zip.generateAsync({type:"blob", compressionOptions: {level: 9}}).then(content => {
 		binObject = new ArrayBuffer(content.arrayBuffer().byteLength);
 		new Uint8Array(binObject).set(new Uint8Array(content.arrayBuffer()));
-		saveAs(content, "ZAPiXWEB_"+userAccount.__x_id._serialized+".zip");
+		var fileName = "ZAPiXWEB_"+userAccount.__x_id._serialized+".zip";
+		if (isElectron()){
+			saveAsElectron(content, fileName);
+		} else {
+			saveAs(content, "ZAPiXWEB_"+userAccount.__x_id._serialized+".zip");
+		}
 		window.ZAPiX._statusTextnode.data = "Save It.";
 	});
 	binObject ='';
@@ -4559,7 +4618,8 @@ window.ZAPiX._internal_end = async function (){
 		var hashFile = new File([(hashHex +" ?SHA512*"+ "ZAPiXWEB_"+userAccount.__x_id._serialized+".sha512.txt")],userAccount.__x_id._serialized+".sha512.txt", {type: "text/plain;charset=utf-8"});
 		saveAs(hashFile);
 	}*/
-	window.ZAPiX.showDigest();
+	if (!isElectron())
+		window.ZAPiX.showDigest();
 	
 	window.ZAPiX._statusTextnode.data = "Extracted data saved.";
 	//window.ZAPiX._injectedStatusNode.remove();
@@ -4646,7 +4706,12 @@ window.ZAPiX.getchat = function (btn){
 		return;
 	}
 	btn.style.background = 'darkgreen';
-	window.ZAPiX._internal_getchat(document.getElementById("main").getElementsByTagName('span')[0].title)
+	spanIndex = 0;
+	var chatTitle = document.getElementById("main").getElementsByTagName('span')[spanIndex];
+	while (chatTitle.dir != 'auto'){
+		chatTitle = document.getElementById("main").getElementsByTagName('span')[++spanIndex];
+	}
+	window.ZAPiX._internal_getchat(document.getElementById("main").getElementsByTagName('span')[spanIndex].title)
 	btn.style.background = 'forestgreen';
 
 	console.log(window.ZAPiX._zapix_header);
