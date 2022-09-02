@@ -18,9 +18,8 @@ Implementation of technique described in paper:
 Soares, A. (2022). WhatsApp Web Client Live Forensics Technique. In Proceedings of the 8th International Conference on Information Systems Security and Privacy - ICISSP, ISBN 978-989-758-553-1, pages 629-636. DOI: 10.5220/0011006400003120
 https://doi.org/10.5220/0011006400003120
 
-ZAPiXWEB WhatsApp Extractor - 4 CHROME (TESTED), FIREFOX (TESTED), EDGE (TESTED), OPERA 
-
-(It also works offline)
+ZAPiXWEB WhatsApp Extractor - 4 CHROME, FIREFOX, EDGE, OPERA, WhatsApp Desktop App (ELECTRON) 
+(It also works offline for Browser extractions. It just works online for DesktopApp)
 
 Script for WhatsApp Web Client Live Forensics
 Script Name: SPIZAPIXWEB.js
@@ -31,8 +30,17 @@ contacts, and account data, even if in a disconnected computer, from WhatsApp We
 browsers. The technique extracts, in line with forensics procedures, digital data that can be loaded in forensic
 tools for analysis. 
 
-URL: https://github.com/kraftdenker/ZAPiXWEB
-
+WhatsApp Desktop  - Electron (For this whatsapp version, it only works online): 
+------------------------------------------------------------------------------
+-Locate running whatsapp app dir with taskmanager->details->whatsapp->(rightclick)->File location (similar to C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2228.14.0_x64__cv1g1gvanyjgm\app)
+-CLOSE APPLICATION. RESTART application with this command line in the app directory: 
+C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2228.14.0_x64__cv1g1gvanyjgm\app>WhatsApp.exe --remote-debugging-port=9222 --disable-web-security --expose-internals-for-testing --allow-sandbox-debugging --debug-devtools --disable-file-system --enable-logging  --unlimited-quota-for-files --enable-experimental-web-platform-features --allow-file-access-from-files
+-Open a browser (Chrome, Edge, etc...) into debug inspector
+ ex: Chrome, type into address bar: chrome://inspect
+     Edge, type into address bar: edge://inspect
+- Wait for remote sites location, click inspect in WhatsApp Desktop program.
+- Copy/Paste ZAPiXWEB script
+- Attention: User needs to explict type the file names to the zip file and to the hash file when asked. After extration, no hashfile is automatically generate. So, the user needs to click 'Last digest' to generate hash file.
 -------------
 - ChangeLog decribed into .js source file.
 -------------
