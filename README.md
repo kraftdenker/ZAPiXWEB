@@ -40,6 +40,7 @@ C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2228.14.0_x64__cv1g1gvan
 
 -Open a browser (Chrome, Edge, etc...) into debug inspector
  ex:
+ 
  Chrome, type into address bar: chrome://inspect
  
  Edge, type into address bar: edge://inspect
