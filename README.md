@@ -39,8 +39,10 @@ WhatsApp Desktop  - Electron (For this whatsapp version, it only works online):
 C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2228.14.0_x64__cv1g1gvanyjgm\app>WhatsApp.exe --remote-debugging-port=9222 --disable-web-security --expose-internals-for-testing --allow-sandbox-debugging --debug-devtools --disable-file-system --enable-logging  --unlimited-quota-for-files --enable-experimental-web-platform-features --allow-file-access-from-files
 
 -Open a browser (Chrome, Edge, etc...) into debug inspector
- ex: Chrome, type into address bar: chrome://inspect
-     Edge, type into address bar: edge://inspect
+ ex:
+ Chrome, type into address bar: chrome://inspect
+ 
+ Edge, type into address bar: edge://inspect
      
 - Wait for remote sites location, click inspect in WhatsApp Desktop program.
 
