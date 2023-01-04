@@ -13,8 +13,8 @@ ZAPiXWEB WhatsApp Extractor - 4 CHROME, FIREFOX, EDGE, OPERA, WhatsApp Desktop A
 (It also works offline for Browser extractions. It just works online for DesktopApp)
 
 Script Name: SPIZAPIXWEB.js
-Version: 1.6
-Revised Date: 08/31/22
+Version: 1.7
+Revised Date: 01/04/23
 
 Description: A script that extracts throught Whatsapp WEB data records.
 Technique described in paper:
@@ -47,6 +47,7 @@ v1.4	- [12-03-21]: Change extraction to full support multiple devices
 v1.5	- [02-21-22]: Hash, new decryption code (using vendor module ligsignal)
 v1.5.1	- [08-31-22]: Adjust in which DOM element to grab the current chat name
 v1.6	- [08-31-22]: Adaptation for use with Electron (Whatsapp Desktop App)
+v1.7	- [01-04-23]: Adaption to new quotedMsg structure.
 
 Author: alberto.magno@gmail.com (https://github.com/kraftdenker)  _
 
@@ -2258,7 +2259,8 @@ window.WAPI._serializeMessageObj = (obj) => {
         return null;
     }
     const _chat = obj['chat'] ? WAPI._serializeChatObj(obj['chat']) : {};
-    if(obj.quotedMsg) obj.quotedMsgObj();
+    console.log(obj);
+	if(obj.quotedMsg) obj.quotedMsg;
     return Object.assign(window.WAPI._serializeRawObj(obj), {
         id: obj.id._serialized,
         from: obj.from._serialized,
