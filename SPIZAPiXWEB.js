@@ -2283,7 +2283,7 @@ window.WAPI._serializeMessageObj = (obj) => {
         isOnline: _chat.isOnline,
         lastSeen: _chat.lastSeen,
         chatId: obj.id.remote,
-        quotedMsgObj: WAPI._serializeMessageObj(obj['_quotedMsgObj']),
+		quotedMsgObj: obj.quotedMsg,
         mediaData: window.WAPI._serializeRawObj(obj['mediaData']),
         reply: body => window.WAPI.reply(_chat.id._serialized, body, obj)
     });
