@@ -13,8 +13,8 @@ ZAPiXWEB WhatsApp Extractor - 4 CHROME, FIREFOX, EDGE, OPERA, WhatsApp Desktop A
 (It also works offline for Browser extractions. It just works online for DesktopApp)
 
 Script Name: SPIZAPIXWEB.js
-Version: 1.7
-Revised Date: 01/04/23
+Version: 1.8
+Revised Date: 03/01/23
 
 Description: A script that extracts throught Whatsapp WEB data records.
 Technique described in paper:
@@ -48,6 +48,7 @@ v1.5	- [02-21-22]: Hash, new decryption code (using vendor module ligsignal)
 v1.5.1	- [08-31-22]: Adjust in which DOM element to grab the current chat name
 v1.6	- [08-31-22]: Adaptation for use with Electron (Whatsapp Desktop App)
 v1.7	- [01-04-23]: Adaption to new quotedMsg structure.
+v1.8	- [03-01-23]: Adjust grabbing the current chat name
 
 Author: alberto.magno@gmail.com (https://github.com/kraftdenker)  _
 
@@ -4713,7 +4714,14 @@ window.ZAPiX.getchat = function (btn){
 	while (chatTitle.dir != 'auto'){
 		chatTitle = document.getElementById("main").getElementsByTagName('span')[++spanIndex];
 	}
-	window.ZAPiX._internal_getchat(document.getElementById("main").getElementsByTagName('span')[spanIndex].title)
+	console.log(document.getElementById("main").getElementsByTagName('span')[spanIndex].title)
+	chatName=document.getElementById("main").getElementsByTagName('span')[spanIndex].title;
+	
+	if (chatName=='' ){
+		chatName=document.getElementById("main").getElementsByTagName('span')[spanIndex].innerHTML
+	}
+	//window.ZAPiX._internal_getchat(document.getElementById("main").getElementsByTagName('span')[spanIndex].title)
+	window.ZAPiX._internal_getchat(chatName)
 	btn.style.background = 'forestgreen';
 
 	console.log(window.ZAPiX._zapix_header);
