@@ -54,12 +54,15 @@ C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2228.14.0_x64__cv1g1gvan
 -------------
 - ChangeLog decribed into .js source file.
 -------------
-Using this foss modules into export script:
+Using these following foss modules into export script:
+
 	AXIOS - https://github.com/axios/axios/
 	JSZIP - https://raw.github.com/Stuk/jszip/
 	FILESSAVER - https://github.com/eligrey/FileSaver.js/
 	WA-AUTOMATE-NODEJS - https://github.com/open-wa/wa-automate-nodejs/blob/master/src/lib/wapi.js
+	
 Using the following module for import into UFED:
+
 	SIMPLEJSON - https://github.com/simplejson/simplejson
 
 USAGE: 
