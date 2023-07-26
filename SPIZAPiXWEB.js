@@ -49,6 +49,7 @@ v1.5.1	- [08-31-22]: Adjust in which DOM element to grab the current chat name
 v1.6	- [08-31-22]: Adaptation for use with Electron (Whatsapp Desktop App)
 v1.7	- [01-04-23]: Adaption to new quotedMsg structure.
 v1.8	- [03-01-23]: Adjust grabbing the current chat name
+v1.9	- [07-26-23]: Adjust grabbing the current user account id.
 
 Author: alberto.magno@gmail.com (https://github.com/kraftdenker)  _
 
@@ -4367,15 +4368,9 @@ function str2ab(str) {
 
 // Main tasks functions
 window.ZAPiX._getMe2 = function (){
-	if (Store.Me == null || Store.Me.wid == null)
+	if (Store.Contact.getMeContact() != null)
 	{
-		for (var contactIndex = 0; contactIndex<Store.Contact._models.length; contactIndex++)
-		{
-			if (Store.Contact._models[contactIndex].__x_isMe)
-			{
-				return Store.Contact._models[contactIndex]
-			}
-		}
+		return Store.Contact.getMeContact();
 	}
     else{
 		return WAPI.getMe();
