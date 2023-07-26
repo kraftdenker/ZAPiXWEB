@@ -14,7 +14,7 @@ ZAPiXWEB WhatsApp Extractor - 4 CHROME, FIREFOX, EDGE, OPERA, WhatsApp Desktop A
 
 Script Name: SPIZAPIXWEB.js
 Version: 1.8
-Revised Date: 03/01/23
+Revised Date: 07/26/23
 
 Description: A script that extracts throught Whatsapp WEB data records.
 Technique described in paper:
