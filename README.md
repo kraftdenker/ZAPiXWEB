@@ -18,7 +18,7 @@ Implementation of technique described in paper:
 Soares, A. (2022). WhatsApp Web Client Live Forensics Technique. In Proceedings of the 8th International Conference on Information Systems Security and Privacy - ICISSP, ISBN 978-989-758-553-1, pages 629-636. DOI: 10.5220/0011006400003120
 https://doi.org/10.5220/0011006400003120
 
-ZAPiXWEB WhatsApp Extractor - 4 CHROME, FIREFOX, EDGE, OPERA, WhatsApp Desktop App (ELECTRON) 
+ZAPiXWEB WhatsApp Extractor - 4 CHROME, FIREFOX, EDGE, OPERA, WhatsApp Desktop App (ELECTRON version deprecated by Meta in JUN/2023) 
 (It also works offline for Browser extractions. It just works online for DesktopApp)
 
 Script for WhatsApp Web Client Live Forensics
@@ -30,7 +30,7 @@ contacts, and account data, even if in a disconnected computer, from WhatsApp We
 browsers. The technique extracts, in line with forensics procedures, digital data that can be loaded in forensic
 tools for analysis. 
 
-WhatsApp Desktop  - Electron (For this whatsapp version, it only works online): 
+WhatsApp Desktop  - Electron (Electron version deprecated by Meta in JUN/23) (For this whatsapp version, it only works online): 
 ------------------------------------------------------------------------------
 
 -Locate running whatsapp app dir with taskmanager->details->whatsapp->(rightclick)->File location (similar to C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2228.14.0_x64__cv1g1gvanyjgm\app)
