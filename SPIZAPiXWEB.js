@@ -27,6 +27,7 @@ Manual: Copy and paste all this code into browser console + ENTER.
 Follow the commands in console window.
 In Firefox, you have to manually type "allow paste" into the console to enable pasting.
 
+---> (FOLLOWING INSTRUCTIONS FOR DESKTOP TECHNIQUE IS NOW DEPRECATED - META CHANGED DESKTOP RUNTIME TO DOTNET APP) 
 WhatsApp Desktop  - Electron (For this whatsapp version, it only works online): 
 -----------------------------------------------------------------
 -start or locate running app dir with taskmanager->details->whatsapp->(rightclick)->File location (similar to C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2228.14.0_x64__cv1g1gvanyjgm\app)
