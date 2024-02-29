@@ -13,8 +13,8 @@ ZAPiXWEB WhatsApp Extractor - 4 CHROME, FIREFOX, EDGE, OPERA, WhatsApp Desktop A
 (It also works offline for Browser extractions. It just works online for DesktopApp)
 
 Script Name: SPIZAPIXWEB.js
-Version: 1.8
-Revised Date: 07/26/23
+Version: 1.10
+Revised Date: 02/29/24
 
 Description: A script that extracts throught Whatsapp WEB data records.
 Technique described in paper:
@@ -51,6 +51,7 @@ v1.6	- [08-31-22]: Adaptation for use with Electron (Whatsapp Desktop App)
 v1.7	- [01-04-23]: Adaption to new quotedMsg structure.
 v1.8	- [03-01-23]: Adjust grabbing the current chat name
 v1.9	- [07-26-23]: Adjust grabbing the current user account id.
+v1.10	- [02-29-24]: function ZAPiX._internal_getChatByName getting chatname also using new field 'formattedTitle'
 
 Author: alberto.magno@gmail.com (https://github.com/kraftdenker)  _
 
@@ -4514,7 +4515,7 @@ window.ZAPiX._internal_getChatByName = function(chatName){
 	ret = null
 	var chats = WAPI.getAllChats();
 	for (var i = 0; i < chats.length; i++) {
-		if ((chats[i].isGroup && chats[i].name == chatName)||(!chats[i].isGroup && chats[i].contact.name == chatName)){
+		if ((chats[i].isGroup && chats[i].name == chatName)||(!chats[i].isGroup && chats[i].formattedTitle == chatName)||(!chats[i].isGroup && chats[i].contact.name == chatName)){
 			console.log("Found:"+chats[i].name)
 			ret =  chats[i]
 			break;
