@@ -367,7 +367,7 @@ window.ZAPiX._getAllChats = function () {
 
 window.ZAPiX._internal_start = async function(){
 	window.ZAPiX._statusTextnode.data = "Extracting User Account...";
-	var userAccount = await userAccountData.getMe();
+	var userAccount = contactCollection.getMeContact(); //await userAccountData.getMe();
 	window.ZAPiX._statusTextnode.data = "Extracting User Contacts...";
 	var contacts = await window.ZAPiX._getUserContacts();
 	window.ZAPiX._statusTextnode.data = "Saving User Account...";
