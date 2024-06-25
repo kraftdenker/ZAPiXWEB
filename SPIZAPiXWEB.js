@@ -457,12 +457,20 @@ window.ZAPiX._internal_getallchats = async function (){
 	window.ZAPiX._statusTextnode.data = chatCount+" chats extracted";
 }
 	
-
+window.ZAPiX._decodeHtmlEntities = function(str) {
+    return str.replace(/&amp;/g, '&')
+              .replace(/&lt;/g, '<')
+              .replace(/&gt;/g, '>')
+              .replace(/&quot;/g, '"')
+              .replace(/&#39;/g, "'");
+}
 
 window.ZAPiX._internal_getChatByName = function(chatName){
 	ret = null
+	chatName = window.ZAPiX._decodeHtmlEntities(chatName).trimStart().trimEnd();
 	var chats = window.ZAPiX._getAllChats();
 	for (var i = 0; i < chats.length; i++) {
+		//console.log(chats[i].formattedTitle);
 		if ((chats[i].isGroup && chats[i].name == chatName)||(!chats[i].isGroup && chats[i].formattedTitle == chatName)||(!chats[i].isGroup && chats[i].contact.name == chatName)){
 			console.log("Found:"+chats[i].name)
 			ret =  chats[i]
