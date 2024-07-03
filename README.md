@@ -18,7 +18,7 @@ Implementation of the technique described in the paper:
 Soares, A. (2022). WhatsApp Web Client Live Forensics Technique. In Proceedings of the 8th International Conference on Information Systems Security and Privacy - ICISSP, ISBN 978-989-758-553-1, pages 629-636. DOI: 10.5220/0011006400003120
 https://doi.org/10.5220/0011006400003120
 
-ZAPiXWEB WhatsApp Extractor - 4 CHROME, FIREFOX, EDGE, OPERA. 
+ZAPiXWEB WhatsApp Extractor - 4 CHROME, FIREFOX, EDGE, BRAVE. 
 ->WhatsApp Desktop App (ELECTRON version deprecated by Meta in JUN/2023 - a new technique in development)
 
 Script for WhatsApp Web Client Live Forensics
