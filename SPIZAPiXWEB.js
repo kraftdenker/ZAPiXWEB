@@ -463,7 +463,7 @@ window.ZAPiX._internal_getallchats = async function (){
 			else if (msgType=='vcard'){
 				try{
 					mimetypeFileExtension = window.ZAPiX._fileExtensions['text/x-vcard'];
-					addFile2Zip('Attachment '+msgHelper.getId(msgs[m])+'.embedded'+mimetypeFileExtension, [msgHelper.getBody(msgs[m]),{ level:9}]);
+					addFile2Zip('Attachment '+msgHelper.getId(msgs[m])+'.embedded'+mimetypeFileExtension, [fflate.strToU8(msgHelper.getBody(msgs[m])),{ level:9}]);
 					console.log("Vcard Saved ");
 				}catch(e){
 					console.log("Vcard NOT saved - "+e.message);
@@ -528,7 +528,7 @@ window.ZAPiX._internal_getchat = async function (chatName){
 			else if (msgType=='vcard'){
 				try{
 					mimetypeFileExtension = window.ZAPiX._fileExtensions['text/x-vcard'];
-					addFile2Zip('Attachment '+msgHelper.getId(msgs[m])+'.embedded'+mimetypeFileExtension, msgHelper.getBody(msgs[m]));
+					addFile2Zip('Attachment '+msgHelper.getId(msgs[m])+'.embedded'+mimetypeFileExtension, [fflate.strToU8(msgHelper.getBody(msgs[m])),{ level:9}]);
 					console.log("Vcard Saved ");
 				}catch(e){
 					console.log("Vcard NOT saved - "+e.message);
