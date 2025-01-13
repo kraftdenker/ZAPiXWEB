@@ -30,8 +30,7 @@ contacts, and account data from WhatsApp Web sessions opened in web
 browsers, even if in a disconnected computer. In line with forensics procedures, the technique extracts digital data that can be loaded into forensic
 tools for analysis. 
 
-WhatsApp Desktop Techinque - Electron (Electron version deprecated by Meta in JUN/23) 
-(a new technique in development)
+WhatsApp Desktop Techinque - see ZAPiXDESK at https://github.com/kraftdenker/ZAPiXDESK
 -------------
 - ChangeLog described into .js source file.
 -------------
