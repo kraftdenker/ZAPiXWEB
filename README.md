@@ -31,6 +31,8 @@ browsers, even if in a disconnected computer. In line with forensics procedures,
 tools for analysis. 
 
 WhatsApp Desktop Techinque - see ZAPiXDESK at https://github.com/kraftdenker/ZAPiXDESK
+Some info also in:
+https://medium.com/@alberto.magno/whatsapp-desktop-and-web-live-forensics-4n6-233f640e9fb3
 -------------
 - ChangeLog described into .js source file.
 -------------
