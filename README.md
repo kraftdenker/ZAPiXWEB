@@ -30,9 +30,13 @@ contacts, and account data from WhatsApp Web sessions opened in web
 browsers, even if in a disconnected computer. In line with forensics procedures, the technique extracts digital data that can be loaded into forensic
 tools for analysis. 
 
-WhatsApp Desktop Techinque - see ZAPiXDESK at https://github.com/kraftdenker/ZAPiXDESK
+# Need WhatsApp DESKTOP ?
+WhatsApp Desktop Technique - see ZAPiXDESK at https://github.com/kraftdenker/ZAPiXDESK
+
 Some info also in:
 https://medium.com/@alberto.magno/whatsapp-desktop-and-web-live-forensics-4n6-233f640e9fb3
+
+# Change Log
 -------------
 - ChangeLog described into .js source file.
 -------------
@@ -40,7 +44,7 @@ Using the following module for import into UFED:
 
 	SIMPLEJSON - https://github.com/simplejson/simplejson
 
-USAGE: 
+# USAGE 
 First of all, if online, you must scroll through the conversations of greatest interest "going
 up" with the scroll bar until the date of interest. It will download locally the message attachments.
 Copy and paste all SPIZAPiXWEB.js code into the browser console + ENTER. 
@@ -48,13 +52,13 @@ Copy and paste all SPIZAPiXWEB.js code into the browser console + ENTER.
 
 Choose options at webinterface on the left corner of the screen.
 
-In Firefox console, you have to manually type "allow paste" into the console to enable pasting.
+In Firefox console, you have to manually type `allow paste` into the console to enable pasting.
 In BRAVE, you have to enable File System Access API:
 	- Open Brave and type brave://flags in the address bar.
 	- Search for “File System Access API”.
 	- Enable the flag and restart the browser.
 
-IMPORTING to UFED:
+# IMPORTING to UFED
 Install plugin ZAPiXWEB_UFED_PLUGIN.tplug to UFED and execute choosing project with ZIP containing exported data.
 In installation process, "simplejson" directory must be in the same directory of the plugin's file.
 Please have a look at ZAPiXWEB_MANUAL.PDF for detailed instructions.
