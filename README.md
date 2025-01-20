@@ -30,7 +30,7 @@ contacts, and account data from WhatsApp Web sessions opened in web
 browsers, even if in a disconnected computer. In line with forensics procedures, the technique extracts digital data that can be loaded into forensic
 tools for analysis. 
 
-# Need WhatsApp DESKTOP ?
+# Need a WhatsApp DESKTOP forensic extraction tool ?
 WhatsApp Desktop Technique - see ZAPiXDESK at https://github.com/kraftdenker/ZAPiXDESK
 
 Some info also in:
