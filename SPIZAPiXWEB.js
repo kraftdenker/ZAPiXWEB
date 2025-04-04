@@ -12,8 +12,8 @@ ZAPiXWEB WhatsApp Extractor - 4 CHROME, FIREFOX, EDGE, OPERA
 (It also works offline for Browser extractions)
 
 Script Name: SPIZAPIXWEB.js
-Version: 2.1
-Revised Date: 01/08/24
+Version: 2.2
+Revised Date: 04/04/25
 
 Description: A script that extracts throught Whatsapp WEB data records.
 Technique described in paper:
@@ -44,6 +44,8 @@ v1.9	- [07-26-23]: Adjust grabbing the current user account id.
 v1.10	- [02-29-24]: function ZAPiX._internal_getChatByName getting chatname also using new field 'formattedTitle'
 v2.0	- [06-23-24]: Code adaptions to new secutiry directives enabled by Meta. All included libraries no more need. All code using only meta dependencies. 
 v2.1	- [08-01-24]: Function to clean chatnames with htmlcode(emojis) to be used by getchatbyname process (Add current chat option).
+v.2.2 - [04-04-25]: Change in saveFile function to pure JS code (cutting dependecy with FileAPI) for compatibility issues with firefox and Safari
+
 Author: alberto.magno@gmail.com (https://github.com/kraftdenker)  _
 */
 
@@ -545,13 +547,20 @@ async function saveFile(dataFile, fileName) {
 	const opts = {
 	suggestedName: fileName
 	};
-	const newHandle = await window.showSaveFilePicker(opts);
+	const blobURL = URL.createObjectURL(dataFile);
+    const link = document.createElement("a");
+    link.href = blobURL;
+    link.download = fileName;
+    link.click();
+    URL.revokeObjectURL(blobURL);
+	
+	/*const newHandle = await window.showSaveFilePicker(opts);
 	const options = {};
 	options.mode = 'readwrite';
 	await newHandle.requestPermission(options);
 	const writableStream = await newHandle.createWritable();
 	await writableStream.write(dataFile);
-	await writableStream.close();
+	await writableStream.close();*/
 }
 
 
