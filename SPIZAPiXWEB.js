@@ -12,8 +12,8 @@ ZAPiXWEB WhatsApp Extractor - 4 CHROME, FIREFOX, EDGE, OPERA
 (It also works offline for Browser extractions)
 
 Script Name: SPIZAPIXWEB.js
-Version: 2.2
-Revised Date: 04/04/25
+Version: 2.3
+Revised Date: 05/09/25
 
 Description: A script that extracts throught Whatsapp WEB data records.
 Technique described in paper:
@@ -45,7 +45,7 @@ v1.10	- [02-29-24]: function ZAPiX._internal_getChatByName getting chatname also
 v2.0	- [06-23-24]: Code adaptions to new secutiry directives enabled by Meta. All included libraries no more need. All code using only meta dependencies. 
 v2.1	- [08-01-24]: Function to clean chatnames with htmlcode(emojis) to be used by getchatbyname process (Add current chat option).
 v.2.2 - [04-04-25]: Change in saveFile function to pure JS code (cutting dependecy with FileAPI) for compatibility issues with firefox and Safari
-
+v.2.3 - [09-05-25]: update UserData function to get PhoneNumber 
 Author: alberto.magno@gmail.com (https://github.com/kraftdenker)  _
 */
 
@@ -299,7 +299,7 @@ window.ZAPiX._serializeProfilePicThumb = (obj) => {
 
 // Main tasks functions
 window.ZAPiX._getUser = function (){
-	return (userAccountData.getMe()._serialized).replaceAll('\"','').replaceAll(":","_"); 
+	return (userAccountData.getMaybeMeDevicePn()._serialized).replaceAll('\"','').replaceAll(":","_"); 
 	//return (localStorage.getItem("last-wid-md")).replaceAll('\"','').replaceAll(":","_");
 }
 
@@ -735,3 +735,4 @@ window.ZAPiX.closeUI = function (btn){
 window.ZAPiX._bootstrap();
 
 //PRESS ENTER KEY NOW TO EXECUTE THIS SCRIPT!!!!!
+
