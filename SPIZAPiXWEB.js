@@ -378,7 +378,7 @@ window.ZAPiX._downloadMediaFile = async function(msg) {
 };
 
 window.ZAPiX._getUserContacts =  function () {
-    return contactCollection._models.filter((contact) => contactHelper.getIsMyContact(contact) === true || contactHelper.getIsMe(contact) === true).map((contact) => window.ZAPiX._serializeContactObj(contact));
+    return contactCollection._models.filter((contact) => contact.syncToAddressbook==true && (contactHelper.getCanRequestPhoneNumber(contact) === true || contactHelper.getIsMe(contact) === true)).map((contact) => window.ZAPiX._serializeContactObj(contact));
 };
 
 window.ZAPiX._getAllChats = function () {
@@ -735,4 +735,3 @@ window.ZAPiX.closeUI = function (btn){
 window.ZAPiX._bootstrap();
 
 //PRESS ENTER KEY NOW TO EXECUTE THIS SCRIPT!!!!!
-
