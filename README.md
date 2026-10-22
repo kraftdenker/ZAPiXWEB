@@ -1,4 +1,7 @@
 # ZAPiXWEB
+
+![ZAPiXWEB logo](ZAPiXWEB.webp)
+
      ______         _____ _______   ____          ________ ____     
     |___  /   /\   |  __ \_   _\ \ / /\ \        / /  ____|  _ \      
        / /   /  \  | |__) || |  \ V /  \ \  /\  / /| |__  | |_) |    
@@ -57,6 +60,60 @@ In BRAVE, you have to enable File System Access API:
 	- Open Brave and type brave://flags in the address bar.
 	- Search for “File System Access API”.
 	- Enable the flag and restart the browser.
+
+# CONVERSION TO ANDROID WHATSAPP LAYOUT (ZAPiXWEB2WA.py)
+
+The script `ZAPiXWEB2WA.py` converts a ZAPiXWEB `.zip` export (produced by
+SPIZAPiXWEB.js in the browser console) into the native Android WhatsApp
+directory/database layout, so the result can be handled by Android
+forensic tooling:
+
+- `msgstore.db` — Android message database (msgstore.db layout)
+- `wa.db`       — Android contacts database (wa.db layout)
+- `Media/`      — decrypted media in the modern Android WhatsApp structure
+- `raw/`        — the zip's original export files, untouched
+
+## Requirements
+
+- Python 3.8+
+- `pycryptodome` (AES/HKDF media decryption):
+
+      pip install pycryptodome
+
+## Usage
+
+```bash
+python3 ZAPiXWEB2WA.py ZAPiXWEB_<user>.zip [output_dir]
+```
+
+- The integrity file `ZAPiXWEB_<user>.sha512.txt` must sit next to the
+  `.zip` (the exact name the browser script writes); the script verifies
+  the SHA-512 hash before doing anything.
+- If `output_dir` is omitted, it defaults to
+  `ZAPiXWEB_<user>_android/` next to the zip file.
+
+## Resulting directory structure
+
+```
+ZAPiXWEB_<user>_android/
+├── msgstore.db                    # Android message database
+├── wa.db                          # Android contacts database
+├── Media/
+│   ├── WhatsApp Images/           # IMG-*.jpg / .png / .webp
+│   ├── WhatsApp Video/            # VID-*.mp4 / .3gp / ...
+│   ├── WhatsApp Audio/            # AUD-*.ogg / .mp4 / ...
+│   ├── WhatsApp Voice Notes/      # PTT-*.ogg / .opus
+│   ├── WhatsApp Animated Gifs/    # GIF-*.gif
+│   ├── WhatsApp Documents/        # DOC-*.pdf / .docx / ...
+│   └── WhatsApp Stickers/         # sticker-*.webp
+└── raw/                           # original ZAPiXWEB export files
+    ├── userAccount.json
+    ├── contacts.json
+    ├── chats.json
+    ├── Chat <jid>.json            # one per conversation
+    ├── album_metadata_*.json
+    └── Attachment ...             # encrypted media as exported
+```
 
 # IMPORTING to UFED
 Install plugin ZAPiXWEB_UFED_PLUGIN.tplug to UFED and execute choosing project with ZIP containing exported data.
